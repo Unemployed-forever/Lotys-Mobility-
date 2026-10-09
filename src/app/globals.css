@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+:root { color-scheme: light; scroll-behavior: smooth; }
+html { scroll-padding-top: 7rem; }
+section[id] { scroll-margin-top: 8rem; }
+body { min-height: 100vh; text-rendering: optimizeLegibility; }
+:focus-visible { outline: 2px solid #3e5f55; outline-offset: 3px; }
+.skip-link { position: fixed; left: 1rem; top: 1rem; z-index: 100; transform: translateY(-200%); border-radius: .75rem; background: #111; padding: .75rem 1rem; color: #fff; font-weight: 800; transition: transform .15s ease; }
+.skip-link:focus { transform: translateY(0); }
+
+/* ------------------------------------------------------------------------------------------
+   Public LOTYS shell (header + footer) – minimal stationery look.
+   ------------------------------------------------------------------------------------------ */
+.lotys-header { position: sticky; top: 0; z-index: 50; border-bottom: 1px solid #e3e3df; background: rgba(251, 251, 250, .94); backdrop-filter: blur(14px); }
+.lotys-header-inner { display: flex; height: 5.75rem; max-width: 82rem; align-items: center; justify-content: space-between; gap: 1rem; margin: 0 auto; padding: 0 1.5rem; }
+.lotys-wordmark { display: block; width: min(16rem, 36vw); min-width: 10rem; }
+.lotys-wordmark img { width: 100%; height: auto; display: block; }
+.lotys-nav { display: flex; align-items: center; gap: .25rem; }
+.lotys-nav a { display: inline-flex; min-height: 44px; align-items: center; padding: .55rem .7rem; font-size: .85rem; color: #2b2b29; transition: color .15s ease; }
+.lotys-nav a:hover { color: #3e5f55; }
+.lotys-actions { display: flex; align-items: center; gap: .55rem; }
+.lotys-theme-button { display: inline-flex; width: 2.75rem; height: 2.75rem; align-items: center; justify-content: center; border: 1px solid #c9c9c3; border-radius: 999px; color: #1f1f1d; background: transparent; }
+.lotys-theme-button:hover { border-color: #3e5f55; color: #3e5f55; }
+.lotys-customer-login { display: inline-flex; min-height: 44px; align-items: center; border-bottom: 1px solid #1f1f1d; padding: .45rem .15rem; font-size: .8rem; font-weight: 600; color: #1f1f1d; }
+.lotys-primary-cta { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; border-radius: .3rem; background: #151515; padding: .75rem 1rem; font-size: .78rem; font-weight: 700; color: #fff; transition: background .15s ease; }
+.lotys-primary-cta:hover { background: #3e5f55; color: #fff; }
+.lotys-mobile-nav { display: none; }
+.lotys-footer { border-top: 1px solid #deded9; background: #f5f5f2; color: #2f2f2c; }
+.lotys-footer-inner { display: grid; max-width: 82rem; grid-template-columns: minmax(0, 1.7fr) 1fr 1fr; gap: 3rem; margin: 0 auto; padding: 3.5rem 1.5rem; }
+.lotys-footer-mark { width: min(18rem, 100%); height: auto; }
+.lotys-footer-text { max-width: 31rem; margin-top: .8rem; font-size: .84rem; line-height: 1.65; color: #4a4a46; }
+.lotys-footer-links { display: flex; flex-direction: column; gap: .65rem; font-size: .86rem; }
+.lotys-footer-links h2 { margin-bottom: .5rem; font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .14em; color: #111; }
+.lotys-footer-links a { display: inline-flex; align-items: center; gap: .4rem; color: #3a3a37; }
+.lotys-footer-links a:hover { color: #3e5f55; }
+.lotys-footer-bottom { max-width: 82rem; margin: 0 auto; border-top: 1px solid #dfdfda; padding: 1.15rem 1.5rem 1.6rem; font-size: .74rem; color: #555551; }
+
+/* ------------------------------------------------------------------------------------------
+   Public content, LIGHT mode: the whole Tailwind palette is inverted as one system.
+   Every component was designed as "dark background + light text"; inverting all colour tokens
+   together keeps each pairing (incl. gradients, tints and badges) high-contrast automatically.
+   ------------------------------------------------------------------------------------------ */
+.lotys-public { background: #fbfbfa; color: #171717; }
+html:not(.theme-dark) .lotys-public {
+  --color-white: #141414;
+  --color-slate-50: #111111; --color-slate-100: #1c1c1a; --color-slate-200: #262624; --color-slate-300: #363633;
+  --color-slate-400: #4d4d49; --color-slate-500: #5f5f5a; --color-slate-600: #6f6f69; --color-slate-700: #cfcfc9;
+  --color-slate-800: #e2e2dd; --color-slate-900: #f4f4f1; --color-slate-950: #ffffff;
+  --color-emerald-50: #13211d; --color-emerald-100: #1a2d27; --color-emerald-200: #223a33; --color-emerald-300: #2b473f;
+  --color-emerald-400: #33524a; --color-emerald-500: #3e5f55; --color-emerald-600: #4d6d63; --color-emerald-700: #a7bdb3;
+  --color-emerald-800: #c9d8d0; --color-emerald-900: #dfe9e4; --color-emerald-950: #eef3f0;
+  --color-teal-200: #50716a; --color-teal-300: #46675e; --color-teal-400: #3a5c52; --color-teal-500: #33524a;
+  --color-teal-900: #dce9e5; --color-teal-950: #eef4f2;
+  --color-red-100: #6e170f; --color-red-200: #84190f; --color-red-300: #9b1d12; --color-red-400: #b42318;
+  --color-red-500: #b42318; --color-red-600: #a51f15; --color-red-700: #ef9a9a; --color-red-800: #f6c9c6;
+  --color-red-900: #fde2e2; --color-red-950: #fef2f2;
+  --color-amber-100: #5a3203; --color-amber-200: #693b04; --color-amber-300: #784404; --color-amber-400: #864d05;
+  --color-amber-500: #8f5306; --color-amber-600: #9a5b0a; --color-amber-700: #e9c77a; --color-amber-800: #f4dda4;
+  --color-amber-900: #fdefc8; --color-amber-950: #fff8e6;
+  --color-yellow-300: #6b4f00; --color-yellow-400: #7a5a00; --color-yellow-500: #876400; --color-yellow-900: #fdf3c4; --color-yellow-950: #fefbe8;
+  --color-blue-300: #1a449c; --color-blue-400: #1f4fb5; --color-blue-500: #2457c5; --color-blue-900: #dbe6ff; --color-blue-950: #eff4ff;
+  --color-indigo-300: #3730a3; --color-indigo-400: #3f37b8; --color-indigo-500: #4338ca; --color-indigo-900: #e0e0ff; --color-indigo-950: #f0f0ff;
+}
+html:not(.theme-dark) .lotys-public > div > section:first-child { background: linear-gradient(135deg, #ffffff 0%, #f2f4f1 100%); border-bottom: 1px solid #e0e0db; }
+html:not(.theme-dark) .lotys-public h1 { font-family: Georgia, "Times New Roman", serif; font-weight: 500; letter-spacing: -.03em; }
+
+/* The brand film is photographic and stays dark in both modes: restore the original palette. */
+.lotys-public section[aria-labelledby="brand-film-heading"] {
+  --color-white: #fff;
+  --color-slate-200: oklch(92.9% 0.013 255.508); --color-slate-300: oklch(86.9% 0.022 252.894); --color-slate-400: oklch(78% 0.03 256.788);
+  --color-slate-700: oklch(37.2% 0.044 257.287); --color-slate-800: oklch(27.9% 0.041 260.031);
+  --color-slate-900: oklch(20.8% 0.042 265.755); --color-slate-950: oklch(12.9% 0.042 264.695);
+  --color-emerald-300: oklch(84.5% 0.143 164.978); --color-emerald-400: oklch(76.5% 0.177 163.223); --color-emerald-950: oklch(26.2% 0.051 172.552);
+}
+
+/* ------------------------------------------------------------------------------------------
+   DARK mode (public) and the team/customer product UI: original dark palette with the two
+   low-contrast greys lifted so small helper text stays readable (WCAG AA ≥ 4.5:1).
+   ------------------------------------------------------------------------------------------ */
+html.theme-dark { color-scheme: dark; }
+html.theme-dark body, html.theme-dark .lotys-public { background: #0f172a; color: #e2e8f0; }
+html.theme-dark .lotys-public, .lotys-staff { --color-slate-500: #8b9bb2; --color-slate-600: #7f8fa6; }
+.lotys-staff { min-height: 100vh; background: var(--color-slate-900); color: var(--color-slate-100); }
+html.theme-dark .lotys-header { border-color: #263244; background: rgba(15, 23, 42, .95); }
+html.theme-dark .lotys-wordmark, html.theme-dark .lotys-footer-mark { filter: invert(1); }
+html.theme-dark .lotys-nav a, html.theme-dark .lotys-customer-login { color: #e2e8f0; border-color: #e2e8f0; }
+html.theme-dark .lotys-theme-button { color: #e2e8f0; border-color: #64748b; }
+html.theme-dark .lotys-primary-cta { background: #f1f5f9; color: #0f172a; }
+html.theme-dark .lotys-primary-cta:hover { background: #a7f3d0; color: #0f172a; }
+html.theme-dark .lotys-footer { border-color: #263244; background: #0b1220; color: #cbd5e1; }
+html.theme-dark .lotys-footer-links h2 { color: #fff; }
+html.theme-dark .lotys-footer-links a, html.theme-dark .lotys-footer-text { color: #cbd5e1; }
+html.theme-dark .lotys-footer-links a:hover, html.theme-dark .lotys-nav a:hover { color: #6ee7b7; }
+html.theme-dark .lotys-footer-bottom { border-color: #263244; color: #a3b1c4; }
+
+html[data-density="compact"] main .p-5 { padding: .875rem; }
+html[data-density="compact"] main .p-6 { padding: 1rem; }
+.force-reduced-motion *, .force-reduced-motion *::before, .force-reduced-motion *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+@media (max-width: 1023px) {
+  .lotys-nav { display: none; }
+  .lotys-mobile-nav { display: flex; gap: .2rem; overflow-x: auto; border-top: 1px solid #e3e3df; padding: .45rem 1rem; background: #fff; }
+  .lotys-mobile-nav a { display: inline-flex; min-height: 44px; align-items: center; white-space: nowrap; padding: .35rem .55rem; font-size: .78rem; color: #2b2b29; }
+  .lotys-footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+  html.theme-dark .lotys-mobile-nav { background: #0f172a; border-color: #263244; }
+  html.theme-dark .lotys-mobile-nav a { color: #e2e8f0; }
+}
+@media (max-width: 640px) {
+  .lotys-header-inner { height: 4.75rem; padding: 0 1rem; }
+  .lotys-wordmark { width: 10.5rem; }
+  .lotys-customer-login { display: none; }
+  .lotys-actions { gap: .35rem; }
+  .lotys-primary-cta { padding: .65rem .7rem; font-size: .7rem; }
+  .lotys-footer-inner { padding: 2.5rem 1rem; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }

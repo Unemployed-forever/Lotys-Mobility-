@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 250" role="img" aria-labelledby="title desc">
+  <title id="title">Lotys Mobility</title>
+  <desc id="desc">Lotus-Signet mit LM-Monogramm und Wortmarke Lotys Mobility</desc>
+  <g fill="none" stroke="#111111" stroke-width="4" stroke-linejoin="round">
+    <path d="M120 48c-24 23-34 51-34 79 25-9 44-27 53-52 3-9 5-18 5-27-9 0-17 0-24 0Z"/>
+    <path d="M61 70c-6 31 1 60 22 82 13-22 17-48 8-73-4-10-10-20-18-29-4 7-8 13-12 20Z"/>
+    <path d="M26 112c13 29 36 48 65 55-1-25-12-49-34-65-9-7-19-12-30-15-2 8-2 16-1 25Z"/>
+    <path d="M39 161c26 18 56 22 84 11-18-18-42-28-68-25-11 1-21 5-31 10 5 1 10 3 15 4Z"/>
+    <path d="M120 48c24 23 34 51 34 79-25-9-44-27-53-52-3-9-5-18-5-27 9 0 17 0 24 0Z"/>
+    <path d="M179 70c6 31-1 60-22 82-13-22-17-48-8-73 4-10 10-20 18-29 4 7 8 13 12 20Z"/>
+    <path d="M214 112c-13 29-36 48-65 55 1-25 12-49 34-65 9-7 19-12 30-15 2 8 2 16 1 25Z"/>
+    <path d="M201 161c-26 18-56 22-84 11 18-18 42-28 68-25 11 1 21 5 31 10-5 1-10 3-15 4Z"/>
+    <path d="M120 31c-22 25-32 56-28 89 28-13 47-38 50-68 1-8 1-15 0-22-8 0-15 0-22 1Z"/>
+    <path d="M120 31c22 25 32 56 28 89-28-13-47-38-50-68-1-8-1-15 0-22 8 0 15 0 22 1Z"/>
+    <circle cx="120" cy="130" r="45" fill="#ffffff"/>
+  </g>
+  <text x="120" y="151" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="51" fill="#111111">LM</text>
+  <path d="M252 45v165" stroke="#111111" stroke-width="2"/>
+  <text x="302" y="112" font-family="Arial, Helvetica, sans-serif" font-size="66" font-weight="400" letter-spacing="16" fill="#111111">LOTYS</text>
+  <line x1="303" y1="142" x2="358" y2="142" stroke="#111111" stroke-width="2"/>
+  <line x1="523" y1="142" x2="578" y2="142" stroke="#111111" stroke-width="2"/>
+  <text x="441" y="153" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="27" letter-spacing="10" fill="#111111">MOBILITY</text>
+  <text x="302" y="192" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#333333">Intelligente Lösungen für moderne Mobilität</text>
+</svg>

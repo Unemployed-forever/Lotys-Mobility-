@@ -1,0 +1,7 @@
+"use client";
+import { useState } from "react";
+export default function InternalPricing() {
+  const [count, setCount] = useState(20);
+  const models = [{ name: "Basic", base: 0, per: 19 }, { name: "Managed", base: 199, per: 29 }, { name: "Full", base: 299, per: 49 }];
+  return <div className="mt-8 space-y-6"><label className="block rounded-2xl border border-slate-800 bg-slate-950 p-6 text-sm text-slate-200">Fahrzeuge: <strong className="text-emerald-300">{count}</strong><input className="mt-4 w-full accent-emerald-400" type="range" min={5} max={100} value={count} onChange={(event) => setCount(Number(event.target.value))} /></label><div className="grid gap-4 sm:grid-cols-3">{models.map((model) => <article key={model.name} className="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h2 className="font-bold text-white">{model.name}</h2><p className="mt-3 text-2xl font-black text-emerald-300">{(model.base + model.per * count).toLocaleString("de-DE")} € <span className="text-xs font-normal text-slate-400">/ Monat netto</span></p><p className="mt-3 text-xs text-slate-500">{model.base} € Grundgebühr + {count} × {model.per} €</p></article>)}</div><p className="rounded-xl border border-amber-500/20 bg-amber-950/20 p-4 text-sm text-amber-100">Mögliche einmalige Einrichtung: 690 € netto. Aufwand, Marge, Sonderleistungen, Laufzeit und Rechts-/Steuerdetails vor einem Angebot individuell prüfen.</p></div>;
+}

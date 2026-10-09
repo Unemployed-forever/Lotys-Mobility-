@@ -1,0 +1,1 @@
+ALTER TABLE "legal_settings" ADD COLUMN "booking_url" varchar(500) DEFAULT '' NOT NULL;
